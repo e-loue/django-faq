@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-31 14:05+0100\n"
+"PO-Revision-Date: 2010-01-31 14:54+0100\n"
+"Last-Translator: Timothée Peignier <timothee.peignier@tryphon.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:10
+msgid "faq"
+msgstr "faq"
+
+#: admin.py:27
+#, python-format
+msgid "Changed status to '%s'."
+msgstr "Le status a été changé pour '%s'. "
+
+#: admin.py:40
+#, python-format
+msgid "%(count)s %(object)s was successfully %(verb)s."
+msgid_plural "%(count)s  %(object)s were successfully %(verb)s."
+msgstr[0] "%(count)s %(object)s a été %(verb)s avec succès."
+msgstr[1] "%(count)s %(object)s ont été %(verb)s avec succès."
+
+#: admin.py:54
+#, python-format
+msgid "Draft selected %(verbose_name_plural)s"
+msgstr "Mettre en attente les %(verbose_name_plural)s sélectionés"
+
+#: admin.py:60
+#, python-format
+msgid "Publish selected %(verbose_name_plural)s"
+msgstr "Publié les %(verbose_name_plural)s sélectionnés"
+
+#: admin.py:66
+#, python-format
+msgid "Remove selected %(verbose_name_plural)s"
+msgstr "Retiré les %(verbose_name_plural)s sélectionnés"
+
+#: admin.py:103
+msgid "Drafted Q's"
+msgstr "Questions en attente"
+
+#: admin.py:108
+msgid "Published Q's"
+msgstr "Questions publiées"
+
+#: admin.py:113
+msgid "Removed Q's"
+msgstr "Questions retirées"
+
+#: admin.py:118
+msgid "Total Q's"
+msgstr "Toutes les questions"
+
+#: constants.py:10
+msgid "drafted"
+msgstr "en attente"
+
+#: constants.py:11
+msgid "published"
+msgstr "publié"
+
+#: constants.py:12
+msgid "removed"
+msgstr "retiré"
+
+#: models.py:85
+msgid "date created"
+msgstr "date de création"
+
+#: models.py:86
+msgid "date modified"
+msgstr "date de modification"
+
+#: models.py:88
+msgid "status"
+msgstr "status"
+
+#: models.py:90
+msgid "Only objects with             \"published\" status will be displayed publicly."
+msgstr "Seul les objects dont le status est \"publié\" seront affichés publiquement."
+
+#: models.py:112
+msgid "title"
+msgstr "titre"
+
+#: models.py:113
+#: models.py:141
+msgid "slug"
+msgstr "slug"
+
+#: models.py:113
+msgid "Used in         the URL for the topic. Must be unique."
+msgstr "Utilisé dans l'URL du sujet. Doit être unique."
+
+#: models.py:115
+msgid "description"
+msgstr "description"
+
+#: models.py:116
+msgid "A short description of this topic."
+msgstr "Une courte description pour ce sujet"
+
+#: models.py:117
+msgid "sites"
+msgstr "sites"
+
+#: models.py:119
+msgid "template name"
+msgstr "nom du template"
+
+#: models.py:120
+msgid "Optional template to use for this             topic's detail page, e.g., \"faq/topics/special.html\". If not             given the standard template will be used."
+msgstr "Template optionnel utilisé le page du sujet, par exemple, \"faq/topics/special.html\". Si aucune valeur n'est donnée, le template par défaut sera utilisé. "
+
+#: models.py:126
+#: models.py:144
+msgid "topic"
+msgstr "sujet"
+
+#: models.py:127
+msgid "topics"
+msgstr "sujets"
+
+#: models.py:140
+#: models.py:153
+msgid "question"
+msgstr "question"
+
+#: models.py:141
+msgid "Used in         the URL for the Question. Must be unique."
+msgstr "Utilisé dans l'URL de la question. Doit être unique."
+
+#: models.py:143
+msgid "answer"
+msgstr "réponse"
+
+#: models.py:146
+msgid "ordering"
+msgstr "ordre"
+
+#: models.py:147
+msgid "An integer used to order the question             amongst others related to the same topic. If not given this             question will be last in the list."
+msgstr "Un nombre entier utilisé pour ordonner les questions du même sujet. Si aucun nombre n'est donné, cette question sera la dernière de la liste."
+
+#: models.py:154
+msgid "questions"
+msgstr "questions"
+
+#: templates/faq/topic_detail.html:6
+#, python-format
+msgid "FAQ: %(topic)s"
+msgstr "FAQ: %(topic)s"
+
+#: templates/faq/topic_detail.html:10
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/faq/topic_list.html:6
+#: templates/faq/topic_list.html.py:7
+msgid "Frequently Asked Questions"
+msgstr "Foire aux questions"
+
