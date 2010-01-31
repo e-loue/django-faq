@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-31 13:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: __init__.py:10
+msgid "faq"
+msgstr ""
+
+#: admin.py:27
+#, python-format
+msgid "Changed status to '%s'."
+msgstr ""
+
+#: admin.py:40
+#, python-format
+msgid "%(count)s %(object)s was successfully %(verb)s."
+msgid_plural "%(count)s  %(object)s were successfully %(verb)s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin.py:54
+#, python-format
+msgid "Draft selected %(verbose_name_plural)s"
+msgstr ""
+
+#: admin.py:60
+#, python-format
+msgid "Publish selected %(verbose_name_plural)s"
+msgstr ""
+
+#: admin.py:66
+#, python-format
+msgid "Remove selected %(verbose_name_plural)s"
+msgstr ""
+
+#: admin.py:103
+msgid "Drafted Q's"
+msgstr ""
+
+#: admin.py:108
+msgid "Published Q's"
+msgstr ""
+
+#: admin.py:113
+msgid "Removed Q's"
+msgstr ""
+
+#: admin.py:118
+msgid "Total Q's"
+msgstr ""
+
+#: constants.py:10
+msgid "drafted"
+msgstr ""
+
+#: constants.py:11
+msgid "published"
+msgstr ""
+
+#: constants.py:12
+msgid "removed"
+msgstr ""
+
+#: models.py:85
+msgid "date created"
+msgstr ""
+
+#: models.py:86
+msgid "date modified"
+msgstr ""
+
+#: models.py:88
+msgid "status"
+msgstr ""
+
+#: models.py:90
+msgid ""
+"Only objects with             \"published\" status will be displayed "
+"publicly."
+msgstr ""
+
+#: models.py:112
+msgid "title"
+msgstr ""
+
+#: models.py:113 models.py:141
+msgid "slug"
+msgstr ""
+
+#: models.py:113
+msgid "Used in         the URL for the topic. Must be unique."
+msgstr ""
+
+#: models.py:115
+msgid "description"
+msgstr ""
+
+#: models.py:116
+msgid "A short description of this topic."
+msgstr ""
+
+#: models.py:117
+msgid "sites"
+msgstr ""
+
+#: models.py:119
+msgid "template name"
+msgstr ""
+
+#: models.py:120
+msgid ""
+"Optional template to use for this             topic's detail page, e.g., "
+"\"faq/topics/special.html\". If not             given the standard template "
+"will be used."
+msgstr ""
+
+#: models.py:126 models.py:144
+msgid "topic"
+msgstr ""
+
+#: models.py:127
+msgid "topics"
+msgstr ""
+
+#: models.py:140 models.py:153
+msgid "question"
+msgstr ""
+
+#: models.py:141
+msgid "Used in         the URL for the Question. Must be unique."
+msgstr ""
+
+#: models.py:143
+msgid "answer"
+msgstr ""
+
+#: models.py:146
+msgid "ordering"
+msgstr ""
+
+#: models.py:147
+msgid ""
+"An integer used to order the question             amongst others related to "
+"the same topic. If not given this             question will be last in the "
+"list."
+msgstr ""
+
+#: models.py:154
+msgid "questions"
+msgstr ""
+
+#: templates/faq/topic_detail.html:6
+#, python-format
+msgid "FAQ: %(topic)s"
+msgstr ""
+
+#: templates/faq/topic_detail.html:10
+msgid "FAQ"
+msgstr ""
+
+#: templates/faq/topic_list.html:6 templates/faq/topic_list.html.py:7
+msgid "Frequently Asked Questions"
+msgstr ""
