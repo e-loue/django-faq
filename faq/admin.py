@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop, ungettext
 
-from faq.constants import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
+from faq.settings import DRAFTED, PUBLISHED, REMOVED, STATUS_CHOICES
 from faq.models import Topic, Question
 from faq.forms import QuestionForm
 
@@ -90,32 +90,15 @@ class TopicAdmin(FAQAdminBase):
                 'template_name')}),
     )
     inlines = (QuestionInline, )
-    list_display = ('title', 'description', 'status', 'question_count_drafted',
-        'question_count_published', 'question_count_removed',
-        'question_count_total')
-    list_filter = ('status', 'modified', 'created', 'sites')
+    list_display = ('title', 'description', 'status', 'question_count')
+    list_filter = ('status', 'sites', 'modified', 'created')
     prepopulated_fields = {'slug': ('title', )}
     search_fields = ('title', 'description')
 
-    def question_count_drafted(self, obj):
-        """Returns the number of drafted Questions for this topic."""
-        return obj.questions.drafted().count()
-    question_count_drafted.short_description = _(u'Drafted Q\'s')
-
-    def question_count_published(self, obj):
-        """Returns the number of published Questions for this topic."""
-        return obj.questions.published().count()
-    question_count_published.short_description = _(u'Published Q\'s')
-
-    def question_count_removed(self, obj):
-        """Returns the number of removed Questions for this topic."""
-        return obj.questions.removed().count()
-    question_count_removed.short_description = _(u'Removed Q\'s')
-
-    def question_count_total(self, obj):
+    def question_count(self, obj):
         """Returns the total number of Questions for this topic."""
         return obj.questions.count()
-    question_count_total.short_description = _(u'Total Q\'s')
+    question_count.short_description = _(u'No. of Questions')
 
 
 class QuestionAdmin(FAQAdminBase):
@@ -125,7 +108,7 @@ class QuestionAdmin(FAQAdminBase):
                 'ordering')}),
     )
     list_display = ('question', 'topic', 'status', 'ordering')
-    list_filter = ('status', 'modified', 'created', 'topic')
+    list_filter = ('status', 'topic', 'modified', 'created')
     prepopulated_fields = {'slug': ('question', )}
     save_as = True
     search_fields = ('question', 'answer')
