@@ -34,17 +34,17 @@ msgstr[1] "%(count)s %(object)s ont été %(verb)s avec succès."
 #: admin.py:54
 #, python-format
 msgid "Draft selected %(verbose_name_plural)s"
-msgstr "Mettre en attente les %(verbose_name_plural)s sélectioné(e)s"
+msgstr "Mettre en attente les %(verbose_name_plural)s sélectionnés"
 
 #: admin.py:60
 #, python-format
 msgid "Publish selected %(verbose_name_plural)s"
-msgstr "Publié les %(verbose_name_plural)s sélectionné(e)s"
+msgstr "Publié les %(verbose_name_plural)s sélectionnés"
 
 #: admin.py:66
 #, python-format
 msgid "Remove selected %(verbose_name_plural)s"
-msgstr "Retiré les %(verbose_name_plural)s sélectionné(e)s"
+msgstr "Rendre privé les %(verbose_name_plural)s sélectionnés"
 
 #: admin.py:101
 msgid "No. of Questions"
@@ -135,15 +135,15 @@ msgstr "questions"
 
 #: settings.py:14
 msgid "drafted"
-msgstr "En attente"
+msgstr "en attente"
 
 #: settings.py:15
 msgid "published"
-msgstr "Publié"
+msgstr "publié"
 
 #: settings.py:16
 msgid "removed"
-msgstr "Retiré"
+msgstr "privé"
 
 #: templates/faq/question_detail.html:8
 #, python-format
