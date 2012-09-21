@@ -13,7 +13,7 @@ from faq.views.normal import TopicDetail, question_detail
 
 urlpatterns = patterns('',
     url(r'^$', TopicList.as_view(), name='faq-topic-list'),
-    url(r'^(?P<slug>[-\w]+)/$', topic_detail, name='faq-topic-detail'),
+    url(r'^(?P<slug>[-\w]+)/$', TopicDetail.as_view(), name='faq-topic-detail'),
     url(r'^(?P<topic_slug>[-\w]+)/(?P<slug>[-\w]+)/$', question_detail,
         name='faq-question-detail'),
 )
