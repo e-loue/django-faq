@@ -1,9 +1,9 @@
-from django.views.generic.list_detail import object_detail
+from django.views.generic import DetailView
 
 from faq.models import Topic, Question
 
 
-def question_detail(request, topic_slug, slug):
+class QuestionDetail(DetailView):
     """
     A detail view of a Question.
 
@@ -16,10 +16,11 @@ def question_detail(request, topic_slug, slug):
             The :model:`faq.Topic` object related to ``question``.
 
     """
-    extra_context = {
-        'topic': Topic.objects.published().get(slug=topic_slug),
-    }
+    queryset = Question.objects.published()
+    template_name = 'faq/question_detail.html'
+    context_object_name = 'question'
 
-    return object_detail(request, queryset=Question.objects.published(),
-        extra_context=extra_context, template_object_name='question',
-        slug=slug)
+    def get_context_data(self, **kwargs):
+        context = super(QuestionDetail, self).get_context_data(**kwargs)
+        context['topic'] = Topic.objects.published().get(slug=self.topic_slug)
+        return context

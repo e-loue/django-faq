@@ -1,12 +1,12 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404, redirect
-from django.views.generic.list_detail import object_detail
+from django.views.generic import DetailView
 
 from faq.models import Topic, Question
 from faq.views.shallow import _fragmentify
 
 
-def topic_detail(request, slug):
+class TopicDetail(DetailView):
     """
     A detail view of a Topic
 
@@ -25,13 +25,13 @@ def topic_detail(request, slug):
             to the given :model:`faq.Topic`.
 
     """
-    extra_context = {
-        'question_list': Question.objects.published().filter(topic__slug=slug),
-    }
+    queryset = Topic.objects.published()
+    context_object_name = 'topic'
 
-    return object_detail(request, queryset=Topic.objects.published(),
-        extra_context=extra_context, template_object_name='topic',
-        template_name_field='template_name', slug=slug)
+    def get_context_data(self, **kwargs):
+        context = super(TopicDetail, self).get_context_data(**kwargs)
+        context['question_list'] = Question.objects.published().filter(topic__slug=self.kwargs['slug'])
+        return context
 
 
 def question_detail(request, topic_slug, slug):
