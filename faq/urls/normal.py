@@ -1,4 +1,8 @@
-from django.conf.urls.defaults import *
+# Django 1.6 fix
+try:
+    from django.conf.urls import *
+except ImportError:
+    from django.conf.urls.defaults import *
 
 from faq.views.shallow import TopicList
 from faq.views.normal import TopicDetail, question_detail
