@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
@@ -86,8 +88,7 @@ class FAQAdminBase(admin.ModelAdmin):
 class TopicAdmin(FAQAdminBase):
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'description', 'status', 'sites',
-                'template_name')}),
+            'fields': ('title', 'slug', 'description', 'status', 'sites')}),
     )
     inlines = (QuestionInline, )
     list_display = ('title', 'description', 'status', 'question_count')
@@ -110,7 +111,6 @@ class QuestionAdmin(FAQAdminBase):
     list_display = ('question', 'topic', 'status', 'ordering')
     list_filter = ('status', 'topic', 'modified', 'created')
     prepopulated_fields = {'slug': ('question', )}
-    save_as = True
     search_fields = ('question', 'answer')
 
 

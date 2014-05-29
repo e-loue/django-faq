@@ -1,7 +1,11 @@
-# -*- coding: utf-8 -*-
+.. _index:
+.. module:: faq
 
-"""
-A Frequently Asked Question (FAQ) management application for Django apps.
+Django FAQ
+==========
+
+Overview
+--------
 
 This Django_ application provides the ability to create and manage lists of
 Frequently Asked Questions (FAQ), organized by topic.
@@ -13,12 +17,20 @@ months.
 
 .. _Django: http://www.djangoproject.com/
 
-"""
 
-from django.utils.translation import ugettext_lazy as _
+Contents
+--------
+
+.. toctree::
+   :maxdepth: 2
+
+   getting_started
 
 
-__version__ = '0.8.3'
+Indices and tables
+------------------
 
-# Mark the app_label for translation.
-_(u'faq')
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

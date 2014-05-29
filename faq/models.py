@@ -1,4 +1,4 @@
-import datetime
+# -*- coding: utf-8 -*-
 
 from django.db import models
 from django.conf import settings
@@ -73,9 +73,8 @@ class OnSiteManager(models.Manager):
 class FAQBase(models.Model):
     """A model holding information common to Topics and Questions."""
 
-    created = models.DateTimeField(_(u'date created'), editable=False)
-    modified = models.DateTimeField(_(u'date modified'), editable=False,
-        null=True)
+    created = models.DateTimeField(_(u'date created'), auto_now_add=True)
+    modified = models.DateTimeField(_(u'date modified'), auto_now=True)
     status = models.IntegerField(_(u'status'), choices=STATUS_CHOICES,
         # TODO: Genericize/fix the help_text.
         db_index=True, default=DRAFTED, help_text=_(u'Only objects with \
@@ -86,13 +85,6 @@ class FAQBase(models.Model):
     class Meta:
         abstract = True
         get_latest_by = 'modified'
-
-    def save(self):
-        if not self.created:
-            self.created = datetime.datetime.now()
-        else:
-            self.modified = datetime.datetime.now()
-        super(FAQBase, self).save()
 
 
 class Topic(FAQBase):
@@ -105,10 +97,6 @@ class Topic(FAQBase):
         help_text=_(u'A short description of this topic.'))
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
         related_name='faq_topics')
-    template_name = models.CharField(_(u'template name'), blank=True,
-        max_length=255, help_text=_(u'Optional template to use for this \
-            topic\'s detail page, e.g., "faq/topics/special.html". If not \
-            given the standard template will be used.'))
 
     class Meta(FAQBase.Meta):
         ordering = ('title', 'slug')
@@ -145,7 +133,7 @@ class Question(FAQBase):
     def __unicode__(self):
         return self.question
 
-    def save(self):
+    def save(self, *args, **kwargs):
         if not self.slug:
             # We populate the slug here because the common case for adding an
             # Question is as an inline to a Topic and InlineModelAdmin does not
@@ -166,7 +154,7 @@ class Question(FAQBase):
                 # as no. 1.
                 ordering = 1
             self.ordering = ordering
-        super(Question, self).save()
+        super(Question, self).save(*args, **kwargs)
 
     @models.permalink
     def get_absolute_url(self):

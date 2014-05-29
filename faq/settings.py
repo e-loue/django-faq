@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 
@@ -16,3 +18,14 @@ STATUS_CHOICES = (
     (REMOVED, _(u'removed')),
 )
 STATUS_CHOICES = getattr(settings, 'FAQ_STATUS_CHOICES', STATUS_CHOICES)
+
+
+# Haystack settings.
+# The default search index used for the app is the default haystack index.
+# But possibly you want to use haystack.indexes.RealTimeSearchIndex, or another
+# of your own making. Go ahead.
+try:
+    from haystack.indexes import SearchIndex
+    SEARCH_INDEX = getattr(settings, 'FAQ_SEARCH_INDEX', SearchIndex)
+except ImportError:
+    SEARCH_INDEX = None
